@@ -95,7 +95,7 @@ int main(void)
   uint16_t rot_03 = 0;	// Value of rotation in the Interrupt Pin ROT03
   uint16_t timer_bfr = 0; // Timer before
   uint16_t timer_curr = 0; // Current time
-  uint16_t rot_buff[3] ={0};
+  uint16_t rot_buff[3] = {0};
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -107,13 +107,13 @@ int main(void)
 	  timer_curr = HAL_GetTick();
 
 	  /* Get the difference between the current timer and last timer in millis
-	   * Calculate the rotation each 200ms */
+	   * Calculate the rotation each 1000ms */
 	  uint16_t timer_diff = timer_curr - timer_bfr;
 	  if (timer_diff > 1000) {
-		  /* Calculate rotations */
-		  rot_01 = rotPulsesCnt_01;
-		  rot_02 = 1000*60*rotPulsesCnt_02/timer_diff;
-		  rot_03 = 1000*60*rotPulsesCnt_03/timer_diff;
+		  /* Calculate rotations in RPM*/
+		  rot_01 = 3*rotPulsesCnt_01;
+		  rot_02 = 3*rotPulsesCnt_02;
+		  rot_03 = 3*rotPulsesCnt_03;
 
 		  /* Reset pulse variables */
 		  rotPulsesCnt_01 = 0;
