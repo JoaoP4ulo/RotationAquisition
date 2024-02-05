@@ -1,4 +1,8 @@
-../Core/Src/main.c:67:5:main	2
-../Core/Src/main.c:145:6:SystemClock_Config	4
-../Core/Src/main.c:190:6:HAL_GPIO_EXTI_Callback	4
-../Core/Src/main.c:211:6:Error_Handler	1
+../Core/Src/main.c:107:5:main	3
+../Core/Src/main.c:197:6:SystemClock_Config	4
+../Core/Src/main.c:242:6:HAL_GPIO_EXTI_Callback	4
+../Core/Src/main.c:259:6:MPU6050_Init	2
+../Core/Src/main.c:292:6:MPU6050_Read_Accel	1
+../Core/Src/main.c:316:6:MPU6050_Read_Gyro	1
+../Core/Src/main.c:338:6:floatToBytes	2
+../Core/Src/main.c:355:6:Error_Handler	1
