@@ -147,9 +147,29 @@ int main(void)
 	  /* Get the difference between the current timer and last timer in millis
 	   * Calculate the rotation each 1000ms */
 	  uint16_t timer_diff = timer_curr - timer_bfr;
-	  if (timer_diff >= 1) {
+	  if (timer_diff >= 100) {
 
 		  MPU6050_Read_Accel();
+//		  /* Calculate rotations in RPM*/
+//		  rot_01 = 3*rotPulsesCnt_01;
+//		  rot_02 = 3*rotPulsesCnt_02;
+//		  rot_03 = 3*rotPulsesCnt_03;
+//
+//		  /* Reset pulse variables */
+//		  rotPulsesCnt_01 = 0;
+//		  rotPulsesCnt_02 = 0;
+//		  rotPulsesCnt_03 = 0;
+//
+//		  /* Fill the buffer to transmit via USB*/
+//		  rot_buff[0] = rot_01;
+//		  rot_buff[1] = rot_02;
+//		  rot_buff[2] = rot_03;
+//
+//		  /* Set the timer before as a current timer */
+//		  timer_bfr = timer_curr;
+//		  dados[0] = rot_buff[0];
+//		  dados[1] = rot_buff[1];
+//		  dados[2] = rot_buff[2];
 		  dados[3] = Accel_X_RAW;
 		  dados[4] = Accel_Y_RAW;
 		  dados[5] = Accel_Z_RAW;
@@ -158,6 +178,9 @@ int main(void)
 		  CDC_Transmit_FS(dados, 12);
 	  }
 	  if (timer_diff >= 1000) {
+
+		  MPU6050_Read_Accel();
+
 		  /* Calculate rotations in RPM*/
 		  rot_01 = 3*rotPulsesCnt_01;
 		  rot_02 = 3*rotPulsesCnt_02;
