@@ -1,8 +1,12 @@
+<h3 align="left">Project Goal</h3>
+
+The objective was to build an acceleration and rotation data acquisition system for a master's thesis on the axle transmission relationship in a hybrid vehicle, carried out on a teaching bench.
+
+
 <h3 align="left">Rotation Aquisition</h3>
 
 This code get three rotations signals on STM32f103c8t6 microcontroller using pulse interruption (Rising and Falling edge) and send the rotation via USB COM port.
 A code in Phyton get the rotations datas from USB and create a sheet with these values.
-
 
 
 Hardware Specification:
